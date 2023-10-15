@@ -4,8 +4,6 @@ Development Environment Setup on Windows **(only for Windows 11)**.
 
 This repository contains the following explanatory syllabus to prepare the development environment with the following tools:
 
-- Development edition Web browsers.
-- VSCode text editor.
 - Windows Terminal with Oh My Posh and Terminal Icons.
     1. Install winget.
     2. Install Oh My Posh.
@@ -14,6 +12,11 @@ This repository contains the following explanatory syllabus to prepare the devel
     5. Set Theme in Oh My Posh.
     6. Install Terminal Icons.
     7. Enable the PSReadLine module.
+- Install development tools.
+    1. Install web browsers for development.
+        - Install Google Chrome Dev (optional).
+        - Install Firefox Developer Edition (recommended).
+    2. Install VSCode 
 - Windows Subsystem for Linux 2 enabled with Ubuntu.
     1. Update the package repository.
     2. Install Git.
@@ -21,12 +24,6 @@ This repository contains the following explanatory syllabus to prepare the devel
     4. Install PostgreSQL.
 - Installing pgAdmin.
 - Install and configure *commitlint*.
-
-## Install development edition web browsers
-1. Install Google Chrome Dev
-2. Install Firefox Developer Edition
-
-## Install VSCode
 
 ## Setup Windows Terminal with Oh My Post and Terminal Icons
 
@@ -142,6 +139,24 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
     ```
     To finish, save the changes `Ctrl+S` and restart the terminal.
 
+## Install development tools.
+
+To install the following tools below run the PowerShell terminal as an Administrator user.
+
+1. ### Install web browsers for development.
+
+    ```
+    # install Google Chrome Dev
+    winget install Google.Chrome.Dev --accept-source-agreements --disable-interactivity
+
+    # install Firefox Developer Edition
+    winget install Mozilla.Firefox.DeveloperEdition --accept-source-agreements --disable-interactivity
+    ```
+2. ### Install VSCode
+
+    ```
+    winget install Microsoft.VisualStudioCode --accept-source-agreements --disable-interactivity
+    ```
 ## Install WSL2 with Ubuntu
 
  1. ### Update the package repository
