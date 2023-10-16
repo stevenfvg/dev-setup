@@ -2,7 +2,7 @@
 
 Development Environment Setup on Windows **(only for Windows 11)**. 
 
-This repository contains the following explanatory syllabus to prepare the development environment with the following tools:
+This repository contains the following explanatory syllabus to prepare and configure the Windows 11 operating system in a development environment with WSL, follow the instructions to configure.
 
 - [Setup Windows Terminal with Oh My Post and Terminal Icons](#setup-windows-terminal-with-oh-my-post-and-terminal-icons)
     1. [Install winget](#install-winget)
@@ -10,8 +10,7 @@ This repository contains the following explanatory syllabus to prepare the devel
     3. [Install fonts for terminal](#install-fonts-for-terminal)
     4. [Start Oh My Posh with default theme](#start-oh-my-posh-with-default-theme)
     5. [Set Theme in Oh My Posh](#set-theme-in-oh-my-posh)
-    6. [Install Terminal Icons](#install-terminal-icons)
-    7. [Enable the PSReadLine module](#enable-the-psreadline-module)
+    6. [Install Terminal Icons and enable PSReadLine module](#install-terminal-icons-and-enable-psreadline-module)
 - [Install development tools](#install-development-tools)
     1. [Install web browsers for development](#install-web-browsers-for-development)
         - [Install Google Chrome Dev](#install-web-browsers-for-development)
@@ -42,19 +41,19 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
 
     Open the **PowerShell** terminal and enter the following command:
 
-    ```
+    ```powershell
     winget install JanDeDobbeleer.OhMyPosh -s winget
     ```
 3. ### Install fonts for terminal
 
-    The following command must be run as administrator for the fonts to be installed system-wide. In case you do not have administrator rights, you can install the sources by adding the --user flag.
+    The following command must be run as administrator for the fonts to be installed system-wide. **In case you do not have administrator rights, you can install the sources by adding the --user flag**.
 
-    ```
+    ```powershell
     oh-my-posh font install
     ```
-    Once you have installed a Nerd Font, you will need to configure the Windows Terminal to use it. This can be easily done by modifying the Windows Terminal settings (default shortcut: CTRL + SHIFT + ,). In your settings.json file, add the font.face attribute under the defaults attribute in profiles:
+    Once you have installed a Nerd Font, you will need to configure the Windows Terminal to use it. This can be easily done by modifying the Windows Terminal settings (default shortcut: **CTRL + SHIFT + ,**). In your settings.json file, add the font.face attribute under the defaults attribute in profiles:
 
-    ```
+    ```json
     {
         "profiles":
         {
@@ -72,7 +71,7 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
 
     For initialization of **Oh My Posh** enter the following command. 
     
-    ```
+    ```powershell
     oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"
 
     # command line output
@@ -80,12 +79,12 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
     ```
     Copy the output of the command to the following configuration file: 
 
-    ```
+    ```powershell
     notepad $PROFILE
     ```
     If Notepad displays a pop-up window displaying the following message *"The system cannot find the path specified"*. Enter the following command to create the configuration file:
 
-    ```
+    ```powershell
     New-Item -Path $PROFILE -Type File -Force
     ```
 
@@ -99,12 +98,12 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
 
     You can also see the list of topics from ***PowerShell*** with the command:
 
-    ```
+    ```powershell
     Get-PoshThemes
     ```
     To change the theme just change the name of the theme from the `$PROFILE` configuration file.
 
-    ```
+    ```powershell
     # Open the configuration file
     notepad $PROFILE
 
@@ -114,30 +113,24 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
     # Example:
     (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\pure.omp.json' --print) -join "`n") | Invoke-Expression
     ```
-6. ### Install Terminal Icons
+6. ### Install Terminal Icons and enable PSReadLine module
 
     Install the icon module for the terminal with the following command:
 
-    ```
+    ```powershell
     Install-Module -Name Terminal-Icons -Repository PSGallery
 
     # then add option [A] to accept.
     ```
-    We add the following line to the `$PROFILE` configuration file with the `notepad $PROFILE` command:
+    We add the following lines to the end of the terminal `$PROFILE` file to import the Terminal-Icons module and enable the PSReadLine.
 
-    ```
+    ```powershell
     Import-Module Terminal-Icons
-    ```
-    We save the changes in our `$PROFILE` file and restart the PowerShell, to verify that everything is done we try adding the command `ls` if it does not work correctly, verify that everything is written correctly in the `$PROFILE` file.
-
-7. ### Enable the PSReadLine module
-
-    To enable the module we add the following command to the `$PROFILE` file:
-
-    ```
     Set-PSReadLineOption -PredictionViewStyle ListView
     ```
     To finish, save the changes `Ctrl+S` and restart the terminal.
+    
+**[⬆ Back to top](#development-environment-in-windows)**
 
 ## Install development tools.
 
