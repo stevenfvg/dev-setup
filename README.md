@@ -11,16 +11,17 @@ This repository contains the following explanatory syllabus to prepare and confi
     4. [Start Oh My Posh with default theme](#start-oh-my-posh-with-default-theme)
     5. [Set Theme in Oh My Posh](#set-theme-in-oh-my-posh)
     6. [Install Terminal Icons and enable PSReadLine module](#install-terminal-icons-and-enable-psreadline-module)
+
+- [Install WSL with Ubuntu](#install-wsl-with-ubuntu)
+    1. [Install Windows updates](#install-windows-updates)
+    2. [Update the package repository](#update-the-package-repository)
+   
 - [Install development tools](#install-development-tools)
     1. [Install web browsers for development](#install-web-browsers-for-development)
         - [Install Google Chrome Dev](#install-web-browsers-for-development)
         - [Install Firefox Developer Edition](#install-web-browsers-for-development)
     2. [Install VSCode](#install-vscode)
-- [Install WSL2 with Ubuntu](#install-wsl2-with-ubuntu)
-    1. [Update the package repository](#update-the-package-repository)
-    2. [Install Git](#install-git)
-    3. [Run bash script to configure Ubuntu](#run-bash-script-to-configure-ubuntu)
-    4. [Install PostgreSQL](#install-postgresql)
+
 - [Installing pgAdmin](#installing-pgadmin)
 - [Install and configure commitlint](#install-and-configure-commitlint)
 
@@ -132,6 +133,36 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
     
 **[⬆ Back to top](#development-environment-in-windows)**
 
+## Install WSL with Ubuntu
+
+ 1. ### Install Windows updates
+
+    Verify that your Windows system is updated to install WSL.
+
+    Go to the **Settings** window > **Windows Update** if there are pending updates to install, run the installation and restart your system to continue.
+
+    ![Windows Update](./assets/imgs/153225.png)
+
+ 2. ### Install WSL
+
+    To install Linux on Windows we must open the ***PowerShell*** command line and type the following command:
+
+    ```powershell
+    wsl --install
+    ```
+    This command will enable the features necessary to run WSL and install the **Ubuntu** distribution of Linux. [(go to the official Microsoft documentation)](https://learn.microsoft.com/en-us/windows/wsl/install).
+
+    If the WSL installation has problems, it is possible that the **Windows Virtualization Platform** is not enabled, run the following command as an administrator user from the ***PowerShell*** command line:
+
+    ```powershell
+    # Enable Virtual Machine Platform feature
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    
+    # Enable the Windows Subsystem for Linux
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    ```
+ 
+
 ## Install development tools.
 
 To install the following tools below run the PowerShell terminal as an Administrator user.
@@ -150,12 +181,6 @@ To install the following tools below run the PowerShell terminal as an Administr
     ```
     winget install Microsoft.VisualStudioCode --accept-source-agreements --disable-interactivity
     ```
-## Install WSL2 with Ubuntu
-
- 1. ### Update the package repository
- 2. ### Install Git
- 3. ### Run bash script to configure Ubuntu
- 4. ### Install PostgreSQL
 
 ## Installing pgAdmin
 
