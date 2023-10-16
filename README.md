@@ -4,28 +4,28 @@ Development Environment Setup on Windows **(only for Windows 11)**.
 
 This repository contains the following explanatory syllabus to prepare the development environment with the following tools:
 
-- Windows Terminal with Oh My Posh and Terminal Icons.
-    1. Install winget.
-    2. Install Oh My Posh.
-    3. Install fonts for terminal.
-    4. Start Oh My Posh with default theme.
-    5. Set Theme in Oh My Posh.
-    6. Install Terminal Icons.
-    7. Enable the PSReadLine module.
-- Install development tools.
-    1. Install web browsers for development.
-        - Install Google Chrome Dev (optional).
-        - Install Firefox Developer Edition (recommended).
-    2. Install VSCode 
-- Windows Subsystem for Linux 2 enabled with Ubuntu.
-    1. Update the package repository.
-    2. Install Git.
-    3. Bash script to configure Git, install Python and Node.js.
-    4. Install PostgreSQL.
-- Installing pgAdmin.
-- Install and configure *commitlint*.
+- [Setup Windows Terminal with Oh My Post and Terminal Icons](#setup-windows-terminal-with-oh-my-post-and-terminal-icons)
+    1. [Install winget](#install-winget)
+    2. [Install Oh My Posh](#install-oh-my-posh)
+    3. [Install fonts for terminal](#install-fonts-for-terminal)
+    4. [Start Oh My Posh with default theme](#start-oh-my-posh-with-default-theme)
+    5. [Set Theme in Oh My Posh](#set-theme-in-oh-my-posh)
+    6. [Install Terminal Icons](#install-terminal-icons)
+    7. [Enable the PSReadLine module](#enable-the-psreadline-module)
+- [Install development tools](#install-development-tools)
+    1. [Install web browsers for development](#install-web-browsers-for-development)
+        - [Install Google Chrome Dev](#install-web-browsers-for-development)
+        - [Install Firefox Developer Edition](#install-web-browsers-for-development)
+    2. [Install VSCode](#install-vscode)
+- [Install WSL2 with Ubuntu](#install-wsl2-with-ubuntu)
+    1. [Update the package repository](#update-the-package-repository)
+    2. [Install Git](#install-git)
+    3. [Run bash script to configure Ubuntu](#run-bash-script-to-configure-ubuntu)
+    4. [Install PostgreSQL](#install-postgresql)
+- [Installing pgAdmin](#installing-pgadmin)
+- [Install and configure commitlint](#install-and-configure-commitlint)
 
-## Setup Windows Terminal with Oh My Post and Terminal Icons
+## Setup Windows Terminal with Oh My Post and Terminal Icons 
 
 Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**. If you have the 2 applications installed, you just have to make sure they are updated.
 
@@ -161,7 +161,7 @@ To install the following tools below run the PowerShell terminal as an Administr
 
  1. ### Update the package repository
  2. ### Install Git
- 3. ### Bash script to configure Git, install Python and Node.js
+ 3. ### Run bash script to configure Ubuntu
  4. ### Install PostgreSQL
 
 ## Installing pgAdmin
