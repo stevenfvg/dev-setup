@@ -4,13 +4,10 @@ Development Environment Setup on Windows **(only for Windows 11)**.
 
 This repository contains the following explanatory syllabus to prepare and configure the Windows 11 operating system in a development environment with WSL, follow the instructions to configure.
 
-- [Setup Windows Terminal with Oh My Post and Terminal Icons](#setup-windows-terminal-with-oh-my-post-and-terminal-icons)
+- [Setup Windows Terminal and PowerShell](#setup-windows-terminal-and-powerShell)
     1. [Install winget](#install-winget)
     2. [Install Oh My Posh](#install-oh-my-posh)
-    3. [Install fonts for terminal](#install-fonts-for-terminal)
-    4. [Start Oh My Posh with default theme](#start-oh-my-posh-with-default-theme)
-    5. [Set Theme in Oh My Posh](#set-theme-in-oh-my-posh)
-    6. [Install Terminal Icons and enable PSReadLine module](#install-terminal-icons-and-enable-psreadline-module)
+    3. [Run script to install development tools](#run-script-to-install-development-tools)
 
 - [Install WSL with Ubuntu](#install-wsl-with-ubuntu)
     1. [Install Windows updates](#install-windows-updates)
@@ -25,18 +22,77 @@ This repository contains the following explanatory syllabus to prepare and confi
 - [Installing pgAdmin](#installing-pgadmin)
 - [Install and configure commitlint](#install-and-configure-commitlint)
 
-## Setup Windows Terminal with Oh My Post and Terminal Icons 
+## Install development tools
 
-Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**. If you have the 2 applications installed, you just have to make sure they are updated.
+1. ### Setup Windows Terminal and PowerShell
 
-![Windows Terminal](./assets/imgs/153222.png)
-![PowerShell](./assets/imgs/153223.png)
+    Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**. If you have the 2 applications installed, you just have to make sure they are updated.
 
-1. ### Install winget
+    ![Windows Terminal](./assets/imgs/153222.png)
+    ![PowerShell](./assets/imgs/153223.png)
 
-    Install the winget package manager from the **Microsoft Store** to install the **Oh My Posh** package.
+2. ### Install winget
+
+    Install or update the ***winget*** package from the **Microsoft Store**, this tool is essential to run the script that will install the development tools.
 
     ![winget](./assets/imgs/153224.png)
+
+3. ### Run script to install development tools
+
+    To install the development tools we must open the PowerShell terminal as an administrator user and execute the following commands:
+
+    ```powershell
+    #Command to download the script:
+    Invoke-RestMethod -Uri https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/installDevTools.ps1 -OutFile 'C:\Users\$env:USERNAME\Downloads\installDevTools.ps1'
+
+    # Access the Downloads directory:
+    cd C:\Users\$env:USERNAME\Downloads\installDevTools.ps1
+
+    # We run the script:
+    ./installDevTools.ps1
+    ```
+    Once the script execution process is complete, you will have the following programs installed on your computer:
+    
+    - Google Chrome browser development version.
+    - Mozilla Firefox developer edition browser.
+    - Visual Studio Code.
+    - Postman.
+    - pgAdmin.
+
+## Install WSL with Ubuntu
+
+ 1. ### Install Windows updates
+
+    Verify that your Windows system is updated to install WSL.
+
+    Go to the **Settings** window > **Windows Update** if there are pending updates to install, run the installation and restart your system to continue.
+
+    ![Windows Update](./assets/imgs/153225.png)
+
+ 2. ### Install WSL
+
+    To install Linux on Windows we must open the ***PowerShell*** command line and type the following command:
+
+    ```powershell
+    wsl --install
+    ```
+    This command will enable the features necessary to run WSL and install the **Ubuntu** distribution of Linux. [(go to the official Microsoft documentation)](https://learn.microsoft.com/en-us/windows/wsl/install).
+
+    If the WSL installation has problems, it is possible that the **Windows Virtualization Platform** is not enabled, run the following command as an administrator user from the ***PowerShell*** command line:
+
+    ```powershell
+    # Enable Virtual Machine Platform feature
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    
+    # Enable the Windows Subsystem for Linux
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    ```
+
+
+
+<!-- 
+
+
 
 2. ### Install Oh My Posh
 
@@ -133,34 +189,7 @@ Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**
     
 **[⬆ Back to top](#development-environment-in-windows)**
 
-## Install WSL with Ubuntu
 
- 1. ### Install Windows updates
-
-    Verify that your Windows system is updated to install WSL.
-
-    Go to the **Settings** window > **Windows Update** if there are pending updates to install, run the installation and restart your system to continue.
-
-    ![Windows Update](./assets/imgs/153225.png)
-
- 2. ### Install WSL
-
-    To install Linux on Windows we must open the ***PowerShell*** command line and type the following command:
-
-    ```powershell
-    wsl --install
-    ```
-    This command will enable the features necessary to run WSL and install the **Ubuntu** distribution of Linux. [(go to the official Microsoft documentation)](https://learn.microsoft.com/en-us/windows/wsl/install).
-
-    If the WSL installation has problems, it is possible that the **Windows Virtualization Platform** is not enabled, run the following command as an administrator user from the ***PowerShell*** command line:
-
-    ```powershell
-    # Enable Virtual Machine Platform feature
-    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-    
-    # Enable the Windows Subsystem for Linux
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-    ```
  
 
 ## Install development tools.
@@ -186,3 +215,4 @@ To install the following tools below run the PowerShell terminal as an Administr
 
 ## Install and configure *commitlint*
 
+->

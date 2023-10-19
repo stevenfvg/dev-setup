@@ -13,4 +13,4 @@ winget install Postman.Postman --accept-source-agreements --disable-interactivit
 # Install pgAdmin 4
 winget install PostgreSQL.pgAdmin --accept-source-agreements --disable-interactivity
 
-Write-Host "Installation process completed. The applications have been installed successfully."
+Write-Host "Installation process completed."
