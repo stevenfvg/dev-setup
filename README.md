@@ -19,7 +19,13 @@ This repository contains the following explanatory syllabus to prepare and confi
 - [Install postgreSQL and connect with pgAdmin](#install-postgresql-and-connect-with-pgadmin)
     1. [Install postgreSQL](#install-postgresql)
     2. [Connect postgresql with pgAdmin](#connect-postgresql-with-pgadmin)
-    
+
+- [Customize Windows Terminal with Oh My Posh (optional)](#customize-windows-terminal-with-oh-my-posh-optional)
+    1. [Install Oh My Posh](#install-oh-my-posh)
+    2. [Install fonts for terminal](#install-fonts-for-terminal)
+    3. [Start Oh My Posh with default theme](#start-oh-my-posh-with-default-theme)
+    4. [Set Theme in Oh My Posh ](#set-theme-in-oh-my-posh)
+    5. [Install Terminal Icons and enable PSReadLine module](#install-terminal-icons-and-enable-psreadline-module)
 
 ## Install development tools
 
