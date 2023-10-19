@@ -17,6 +17,8 @@ This repository contains the following explanatory syllabus to prepare and confi
     5. [Install development environment](#install-development-environment)
    
 - [Install postgreSQL and connect with pgAdmin](#install-postgresql-and-connect-with-pgAdmin)
+    1. [Install postgreSQL](#install-postgresql)
+    2. [Connect postgresql with pgAdmin](#connect-postgresql-with-pgadmin)
     
 
 ## Install development tools
@@ -129,8 +131,41 @@ This repository contains the following explanatory syllabus to prepare and confi
 
 ## Install postgreSQL and connect with pgAdmin
 
+ 1. ### Install postgreSQL
+    
+    Open Ubuntu terminal and run the following commands to install ***postgresql***:
 
+    ```bash
+    # Create the file repository configuration:
+    sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
+    # Import the repository signing key:
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+    
+    # Update the package lists:
+    sudo apt-get update
+
+    # Install the latest version of PostgreSQL.
+    # If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+    sudo apt-get -y install postgresql
+    ```
+    At the end of the installation, enter the ***postgresql*** command line:
+
+    ```bash
+    sudo -u postgres psql
+    ```
+
+    Now we will create a username and password for the database configuration:
+
+    ```sql
+    CREATE ROLE user PASSWORD 'password' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+    ```
+
+    **Important**: change the word ***user*** with your ***username*** and the word ***password*** with the ***password*** of your preference inside the single quotes.
+
+    To exit the postgresql command line use the syntax `\q`
+ 
+ 2. ### Connect postgresql with pgAdmin
 
 
 <!-- 
