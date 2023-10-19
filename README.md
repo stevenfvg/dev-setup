@@ -43,21 +43,21 @@ This repository contains the following explanatory syllabus to prepare and confi
 
     ```powershell
     #Command to download the script:
-    Invoke-RestMethod -Uri https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/installDevTools.ps1 -OutFile 'C:\Users\$env:USERNAME\Downloads\installDevTools.ps1'
+    Invoke-RestMethod -Uri https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/installDevTools.ps1 -OutFile "C:\Users\$env:USERNAME\Downloads\installDevTools.ps1"
 
     # Access the Downloads directory:
-    cd C:\Users\$env:USERNAME\Downloads\installDevTools.ps1
+    cd C:\Users\$env:USERNAME\Downloads\
 
     # We run the script:
     ./installDevTools.ps1
     ```
     Once the script execution process is complete, you will have the following programs installed on your computer:
     
-    - Google Chrome browser development version.
-    - Mozilla Firefox developer edition browser.
-    - Visual Studio Code.
-    - Postman.
-    - pgAdmin.
+    - [Google Chrome developer edition browser](https://www.google.com/intl/es_us/chrome/dev/).
+    - [Mozilla Firefox developer edition browser](https://www.mozilla.org/es-CL/firefox/developer/).
+    - [Visual Studio Code](https://code.visualstudio.com/).
+    - [Postman](https://www.postman.com/downloads/).
+    - [pgAdmin](https://www.pgadmin.org/download/pgadmin-4-windows/).
 
 ## Install WSL with Ubuntu
 
@@ -71,24 +71,20 @@ This repository contains the following explanatory syllabus to prepare and confi
 
  2. ### Install WSL
 
-    To install Linux on Windows we must open the ***PowerShell*** command line and type the following command:
+    To install Linux on Windows we must open the ***PowerShell*** command line and type the following command (it is not necessary to open the terminal as an administrator user):
 
     ```powershell
     wsl --install
     ```
-    This command will enable the features necessary to run WSL and install the **Ubuntu** distribution of Linux. [(go to the official Microsoft documentation)](https://learn.microsoft.com/en-us/windows/wsl/install).
+    This command will enable the features necessary to run WSL and install the **Ubuntu** Linux distribution. [(go to the official Microsoft documentation for more information)](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-    If the WSL installation has problems, it is possible that the **Windows Virtualization Platform** is not enabled, run the following command as an administrator user from the ***PowerShell*** command line:
+    Once the WSL installation is complete, enter the following command to reboot the system:
 
     ```powershell
-    # Enable Virtual Machine Platform feature
-    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-    
-    # Enable the Windows Subsystem for Linux
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-    ```
+    Restart-Computer -Force
+    ```    
 
-
+## Run a script to install development environment in Ubuntu terminal
 
 <!-- 
 
@@ -188,31 +184,5 @@ This repository contains the following explanatory syllabus to prepare and confi
     To finish, save the changes `Ctrl+S` and restart the terminal.
     
 **[⬆ Back to top](#development-environment-in-windows)**
-
-
- 
-
-## Install development tools.
-
-To install the following tools below run the PowerShell terminal as an Administrator user.
-
-1. ### Install web browsers for development.
-
-    ```
-    # install Google Chrome Dev
-    winget install Google.Chrome.Dev --accept-source-agreements --disable-interactivity
-
-    # install Firefox Developer Edition
-    winget install Mozilla.Firefox.DeveloperEdition --accept-source-agreements --disable-interactivity
-    ```
-2. ### Install VSCode
-
-    ```
-    winget install Microsoft.VisualStudioCode --accept-source-agreements --disable-interactivity
-    ```
-
-## Installing pgAdmin
-
-## Install and configure *commitlint*
 
 ->
