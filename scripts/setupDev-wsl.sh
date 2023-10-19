@@ -11,8 +11,8 @@ sudo npm install -g n
 sudo n install lts latest
 
 # Add npm packages
-npm install -g nodemon
-npm install -g @commitlint/cli @commitlint/config-conventional
+sudo npm install -g nodemon
+sudo npm install -g @commitlint/cli @commitlint/config-conventional
 
 # Install the latest version of Python
 sudo apt -y install software-properties-common
@@ -20,7 +20,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt -y install python3.11
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 
-sudo apt install python3.11-dev python3.11-venv python3.11-distutils python3.11-gdbm python3.11-tk python3.11-lib2to3
+sudo apt -y install python3.11-dev python3.11-venv python3.11-distutils python3.11-gdbm python3.11-tk python3.11-lib2to3
 
 #
 # Installing Git
@@ -45,3 +45,5 @@ if [ ! -f "/home/${USER}/.ssh/id_ed25519" ]; then
   cat "/home/${USER}/.ssh/id_ed25519.pub"
   read -rp "Press Enter to continue..."
 fi
+
+echo -e "\e[32mProcess completed satisfactorily..\e[0m"
