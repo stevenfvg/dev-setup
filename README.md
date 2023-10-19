@@ -4,23 +4,20 @@ Development Environment Setup on Windows **(only for Windows 11)**.
 
 This repository contains the following explanatory syllabus to prepare and configure the Windows 11 operating system in a development environment with WSL, follow the instructions to configure.
 
-- [Setup Windows Terminal and PowerShell](#setup-windows-terminal-and-powerShell)
-    1. [Install winget](#install-winget)
-    2. [Install Oh My Posh](#install-oh-my-posh)
+- [Install development tools](#install-development-tools)
+    1. [Setup Windows Terminal and PowerShell](#setup-windows-terminal-and-powershell)
+    2. [Install winget](#install-winget)
     3. [Run script to install development tools](#run-script-to-install-development-tools)
 
 - [Install WSL with Ubuntu](#install-wsl-with-ubuntu)
     1. [Install Windows updates](#install-windows-updates)
-    2. [Update the package repository](#update-the-package-repository)
+    2. [Install WSL](#install-wsl)
+    3. [Install Ubuntu updates](#install-ubuntu-updates)
+    4. [Install dependencies and utilities](#install-dependencies-and-utilities)
+    5. [Install development environment](#install-development-environment)
    
-- [Install development tools](#install-development-tools)
-    1. [Install web browsers for development](#install-web-browsers-for-development)
-        - [Install Google Chrome Dev](#install-web-browsers-for-development)
-        - [Install Firefox Developer Edition](#install-web-browsers-for-development)
-    2. [Install VSCode](#install-vscode)
-
-- [Installing pgAdmin](#installing-pgadmin)
-- [Install and configure commitlint](#install-and-configure-commitlint)
+- [Install postgreSQL and connect with pgAdmin](#install-postgresql-and-connect-with-pgAdmin)
+    
 
 ## Install development tools
 
@@ -59,6 +56,8 @@ This repository contains the following explanatory syllabus to prepare and confi
     - [Postman](https://www.postman.com/downloads/).
     - [pgAdmin](https://www.pgadmin.org/download/pgadmin-4-windows/).
 
+    **[⬆ Back to top](#development-environment-in-windows)**
+
 ## Install WSL with Ubuntu
 
  1. ### Install Windows updates
@@ -78,18 +77,63 @@ This repository contains the following explanatory syllabus to prepare and confi
     ```
     This command will enable the features necessary to run WSL and install the **Ubuntu** Linux distribution. [(go to the official Microsoft documentation for more information)](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-    Once the WSL installation is complete, enter the following command to reboot the system:
+    At the end of the installation you must restart the system to take the changes, enter the following command:
 
     ```powershell
     Restart-Computer -Force
     ```    
+    When you start the computer you will notice that the Ubuntu terminal will start automatically so it will ask you to enter your username and password.
 
-## Run a script to install development environment in Ubuntu terminal
+    ![Terminal Ubuntu](./assets/imgs/153226.png)
+
+    Enter the following command to remove the Ubuntu welcome message every time you start the terminal:
+
+    ```bash
+    touch .hushlogin
+    ```
+
+ 3. ### Install Ubuntu updates
+
+    ```bash
+    sudo apt -y update && sudo apt -y upgrade 
+    ```
+
+4. ### Install dependencies and utilities:
+
+    ```bash
+    sudo apt -y install wget unzip tar unrar p7zip-full && sudo snap install curl
+    ```
+
+5. ### Install development environment
+
+    Run the following command to download the development environment setup script to the Ubuntu terminal:
+
+    ```bash
+    curl -L https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/setupDev-wsl.sh -O && chmod +x setupDev-wsl.sh
+    ```
+    Run the script to start the installation and configuration process:
+
+    ```bash
+    ./setupDev-wsl.sh
+    ```
+    This script performs various tasks such as installing Vim text editor, Node.js, npm, Python, Git and configuring Git with your username and email. It also generates an SSH key pair for use with GitHub.
+    Wait for the installation process to finish and enter the following command line to add the ***commitlint*** configuration:
+
+    ```bash
+    echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+    ```
+
+    **Note**: Don't forget to add your ***SSH*** public key to your **GitHub** configuration for added security when cloning repositories and pushing changes from your local **Git** server to the remote server.
+
+    **[⬆ Back to top](#development-environment-in-windows)**
+
+## Install postgreSQL and connect with pgAdmin
+
+
+
+
 
 <!-- 
-
-
-
 2. ### Install Oh My Posh
 
     Open the **PowerShell** terminal and enter the following command:
