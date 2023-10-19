@@ -16,7 +16,7 @@ This repository contains the following explanatory syllabus to prepare and confi
     4. [Install dependencies and utilities](#install-dependencies-and-utilities)
     5. [Install development environment](#install-development-environment)
    
-- [Install postgreSQL and connect with pgAdmin](#install-postgresql-and-connect-with-pgAdmin)
+- [Install postgreSQL and connect with pgAdmin](#install-postgresql-and-connect-with-pgadmin)
     1. [Install postgreSQL](#install-postgresql)
     2. [Connect postgresql with pgAdmin](#connect-postgresql-with-pgadmin)
     
@@ -166,102 +166,31 @@ This repository contains the following explanatory syllabus to prepare and confi
     To exit the postgresql command line use the syntax `\q`
  
  2. ### Connect postgresql with pgAdmin
-
-
-<!-- 
-2. ### Install Oh My Posh
-
-    Open the **PowerShell** terminal and enter the following command:
-
-    ```powershell
-    winget install JanDeDobbeleer.OhMyPosh -s winget
-    ```
-3. ### Install fonts for terminal
-
-    The following command must be run as administrator for the fonts to be installed system-wide. **In case you do not have administrator rights, you can install the sources by adding the --user flag**.
-
-    ```powershell
-    oh-my-posh font install
-    ```
-    Once you have installed a Nerd Font, you will need to configure the Windows Terminal to use it. This can be easily done by modifying the Windows Terminal settings (default shortcut: **CTRL + SHIFT + ,**). In your settings.json file, add the font.face attribute under the defaults attribute in profiles:
-
-    ```json
-    {
-        "profiles":
-        {
-            "defaults":
-            {
-                "font": 
-                {
-                    "face": "FiraCode Nerd Font Mono"
-                }
-            }
-        }
-    }
-    ```
-4. ### Start Oh My Posh with default theme
-
-    For initialization of **Oh My Posh** enter the following command. 
     
-    ```powershell
-    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"
+    To start the postgreSQL connection with the graphical environment, open the ***pgAdmin4*** application.
 
-    # command line output
-    (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\jandedobbeleer.omp.json' --print) -join "`n") | Invoke-Expression
-    ```
-    Copy the output of the command to the following configuration file: 
+    <div style="text-align:center">
+        <img src="./assets/imgs/153227.png" width="500">
+    </div>
 
-    ```powershell
-    notepad $PROFILE
-    ```
-    If Notepad displays a pop-up window displaying the following message *"The system cannot find the path specified"*. Enter the following command to create the configuration file:
+    When starting pgAdmin we must make the connection with postgreSQL by adding a new server:
 
-    ```powershell
-    New-Item -Path $PROFILE -Type File -Force
-    ```
+    <div style="text-align:center">
+        <img src="./assets/imgs/153228.png">
+    </div>
 
-    Repeat the `notepad $PROFILE` command to open the configuration file.
+    In the ***General*** tab of the ***Register Server*** window we must add a name, for example:
 
-    Add the output of the command `oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"` to the configuration file `$PROFILE` save the changes and restart the terminal to start Oh My Posh.
+    <div style="text-align:center">
+        <img src="./assets/imgs/153229.png" width="500">
+    </div>
 
-5. ### Set Theme in Oh My Posh     
+    Then in the Connection window we add the hostname of our computer ***127.0.0.1*** followed by the ***username*** and ***password*** created in the **postgreSQL command line**:
 
-    In this case the default theme "jandedobbeleer.omp.json" is being used. You can choose the one you prefer, consult the [Oh My Posh documentation](https://ohmyposh.dev/docs/themes) to see the list of themes.
+    <div style="text-align:center">
+        <img src="./assets/imgs/153230.png" width="500">
+    </div>
 
-    You can also see the list of topics from ***PowerShell*** with the command:
+    To finish the configuration, press the ***Save*** button.
 
-    ```powershell
-    Get-PoshThemes
-    ```
-    To change the theme just change the name of the theme from the `$PROFILE` configuration file.
-
-    ```powershell
-    # Open the configuration file
-    notepad $PROFILE
-
-    # Change only the name of the theme in the following line:
-    (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\"new theme name".omp.json' --print) -join "`n") | Invoke-Expression
-
-    # Example:
-    (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\pure.omp.json' --print) -join "`n") | Invoke-Expression
-    ```
-6. ### Install Terminal Icons and enable PSReadLine module
-
-    Install the icon module for the terminal with the following command:
-
-    ```powershell
-    Install-Module -Name Terminal-Icons -Repository PSGallery
-
-    # then add option [A] to accept.
-    ```
-    We add the following lines to the end of the terminal `$PROFILE` file to import the Terminal-Icons module and enable the PSReadLine.
-
-    ```powershell
-    Import-Module Terminal-Icons
-    Set-PSReadLineOption -PredictionViewStyle ListView
-    ```
-    To finish, save the changes `Ctrl+S` and restart the terminal.
-    
-**[⬆ Back to top](#development-environment-in-windows)**
-
-->
+    **Important note**: we must keep the address ***127.0.0.1*** and the port ***5432*** that appears in the image.
