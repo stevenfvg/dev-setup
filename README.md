@@ -2,7 +2,12 @@
 
 Development Environment Setup on Windows **(only for Windows 11)**. 
 
-This repository contains the following explanatory syllabus to prepare and configure the Windows 11 operating system in a development environment with WSL, follow the instructions to configure.
+This repository is designed to simplify the initial setup of a development environment on Windows 11, allowing you to program in **Python**, **Node.js**, and create databases with **PostgreSQL**. Additionally, it includes instructions for installing ***Windows Subsystem for Linux (WSL)***, giving you the flexibility to work in a Linux environment on your Windows system. Our detailed guide will help you install the essential tools and configure your system so that you are ready to code and develop software projects efficiently.
+
+<details>
+    <summary>Show table of contents</summary>
+
+## Table of Contents
 
 - [Install development tools](#install-development-tools)
     1. [Setup Windows Terminal and PowerShell](#setup-windows-terminal-and-powershell)
@@ -26,6 +31,8 @@ This repository contains the following explanatory syllabus to prepare and confi
     3. [Start Oh My Posh with default theme](#start-oh-my-posh-with-default-theme)
     4. [Set Theme in Oh My Posh ](#set-theme-in-oh-my-posh)
     5. [Install Terminal Icons and enable PSReadLine module](#install-terminal-icons-and-enable-psreadline-module)
+
+</details>
 
 ## Install development tools
 
