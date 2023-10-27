@@ -1,232 +1,232 @@
-# Development Environment in Windows
+# Entorno de Desarrollo en Windows
 
-Development Environment Setup on Windows **(only for Windows 11)**. 
+Configuración del Entorno de Desarrollo en Windows **(solo para Windows 11)**. 
 
-This repository is designed to simplify the initial setup of a development environment on Windows 11, allowing you to program in **Python**, **Node.js**, and create databases with **PostgreSQL**. Additionally, it includes instructions for installing ***Windows Subsystem for Linux (WSL)***, giving you the flexibility to work in a Linux environment on your Windows system. Our detailed guide will help you install the essential tools and configure your system so that you are ready to code and develop software projects efficiently.
+Este repositorio está diseñado para simplificar la configuración inicial de un entorno de desarrollo en Windows 11, permitiéndote programar en **Python**, **Node.js** y crear bases de datos con **PostgreSQL**. Además, incluye instrucciones para instalar ***Windows Subsystem for Linux (WSL)***, brindándote la flexibilidad de trabajar en un entorno de Linux en tu sistema Windows. Nuestra guía detallada te ayudará a instalar las herramientas esenciales y configurar tu sistema para que estés listo para codificar y desarrollar proyectos de software de manera eficiente.
 
 <details>
-    <summary>Show table of contents</summary>
+    <summary>Mostrar tabla de contenidos</summary>
 
-## Table of Contents
+## Tabla de Contenidos
 
-- [Install development tools](#install-development-tools)
-    1. [Setup Windows Terminal and PowerShell](#setup-windows-terminal-and-powershell)
-    2. [Install winget](#install-winget)
-    3. [Run script to install development tools](#run-script-to-install-development-tools)
+- [Instalar herramientas de desarrollo](#instalar-herramientas-de-desarrollo)
+    1. [Configurar Windows Terminal y PowerShell](#configurar-windows-terminal-y-powershell)
+    2. [Instalar winget](#instalar-winget)
+    3. [Ejecutar script para instalar herramientas de desarrollo](#ejecutar-script-para-instalar-herramientas-de-desarrollo)
 
-- [Install WSL with Ubuntu](#install-wsl-with-ubuntu)
-    1. [Install Windows updates](#install-windows-updates)
-    2. [Install WSL](#install-wsl)
-    3. [Install Ubuntu updates](#install-ubuntu-updates)
-    4. [Install dependencies and utilities](#install-dependencies-and-utilities)
-    5. [Install development environment](#install-development-environment)
+- [Instalar WSL con Ubuntu](#instalar-wsl-con-ubuntu)
+    1. [Instalar actualizaciones de Windows](#instalar-actualizaciones-de-windows)
+    2. [Instalar WSL](#instalar-wsl)
+    3. [Instalar actualizaciones de Ubuntu](#instalar-actualizaciones-de-ubuntu)
+    4. [Instalar dependencias y utilidades](#instalar-dependencias-y-utilidades)
+    5. [Instalar entorno de desarrollo](#instalar-entorno-de-desarrollo)
    
-- [Install postgreSQL and connect with pgAdmin](#install-postgresql-and-connect-with-pgadmin)
-    1. [Install postgreSQL](#install-postgresql)
-    2. [Connect postgresql with pgAdmin](#connect-postgresql-with-pgadmin)
+- [Instalar PostgreSQL y conectar con pgAdmin](#instalar-postgresql-y-conectar-con-pgadmin)
+    1. [Instalar PostgreSQL](#instalar-postgresql)
+    2. [Conectar PostgreSQL con pgAdmin](#conectar-postgresql-con-pgadmin)
 
-- [Customize Windows Terminal with Oh My Posh (optional)](#customize-windows-terminal-with-oh-my-posh-optional)
-    1. [Install Oh My Posh](#install-oh-my-posh)
-    2. [Install fonts for terminal](#install-fonts-for-terminal)
-    3. [Start Oh My Posh with default theme](#start-oh-my-posh-with-default-theme)
-    4. [Set Theme in Oh My Posh ](#set-theme-in-oh-my-posh)
-    5. [Install Terminal Icons and enable PSReadLine module](#install-terminal-icons-and-enable-psreadline-module)
+- [Personalizar Windows Terminal con Oh My Posh (opcional)](#personalizar-windows-terminal-con-oh-my-posh-optional)
+    1. [Instalar Oh My Posh](#instalar-oh-my-posh)
+    2. [Instalar fuentes para el terminal](#instalar-fuentes-para-el-terminal)
+    3. [Iniciar Oh My Posh con el tema predeterminado](#iniciar-oh-my-posh-con-el-tema-predeterminado)
+    4. [Establecer un tema en Oh My Posh](#establecer-un-tema-en-oh-my-posh)
+    5. [Instalar iconos de terminal y habilitar el módulo PSReadLine](#instalar-iconos-de-terminal-y-habilitar-el-módulo-psreadline)
 
 </details>
 
-## Install development tools
+## Instalar herramientas de desarrollo
 
-1. ### Setup Windows Terminal and PowerShell
+1. ### Configurar Windows Terminal y PowerShell
 
-    Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**. If you have the 2 applications installed, you just have to make sure they are updated.
+    Instala el **Windows Terminal** y **PowerShell** desde la **Tienda Microsoft**. Si ya tienes estas dos aplicaciones instaladas, asegúrate de que estén actualizadas.
 
     ![Windows Terminal](./assets/imgs/153222.png)
     ![PowerShell](./assets/imgs/153223.png)
 
-2. ### Install winget
+2. ### Instalar winget
 
-    Install or update the ***winget*** package from the **Microsoft Store**, this tool is essential to run the script that will install the development tools.
+    Instala o actualiza el paquete ***winget*** desde la **Tienda Microsoft**, esta herramienta es esencial para ejecutar el script que instalará las herramientas de desarrollo.
 
     ![winget](./assets/imgs/153224.png)
 
-3. ### Run script to install development tools
+3. ### Ejecutar script para instalar herramientas de desarrollo
 
-    To install the development tools we must open the PowerShell terminal as an administrator user and execute the following commands:
+    Para instalar las herramientas de desarrollo, debemos abrir la terminal de PowerShell como administrador y ejecutar los siguientes comandos:
 
     ```powershell
-    #Command to download the script:
+    # Comando para descargar el script:
     Invoke-RestMethod -Uri https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/installDevTools.ps1 -OutFile "C:\Users\$env:USERNAME\Downloads\installDevTools.ps1"
 
-    # Access the Downloads directory:
+    # Accede al directorio de Descargas:
     cd C:\Users\$env:USERNAME\Downloads\
 
-    # We run the script:
+    # Ejecutamos el script:
     ./installDevTools.ps1
     ```
-    Once the script execution process is complete, you will have the following programs installed on your computer:
-    
-    - [Google Chrome developer edition browser](https://www.google.com/intl/es_us/chrome/dev/).
-    - [Mozilla Firefox developer edition browser](https://www.mozilla.org/es-CL/firefox/developer/).
+    Una vez que se complete el proceso de ejecución del script, tendrás los siguientes programas instalados en tu computadora:
+
+    - [Navegador Google Chrome Developer Edition](https://www.google.com/intl/es_us/chrome/dev/).
+    - [Navegador Mozilla Firefox Developer Edition](https://www.mozilla.org/es-CL/firefox/developer/).
     - [Visual Studio Code](https://code.visualstudio.com/).
     - [Postman](https://www.postman.com/downloads/).
     - [pgAdmin](https://www.pgadmin.org/download/pgadmin-4-windows/).
 
-    **[⬆ Back to top](#development-environment-in-windows)**
+    **[⬆ Volver al inicio](#entorno-de-desarrollo-en-windows)**
 
-## Install WSL with Ubuntu
+## Instalar WSL con Ubuntu
 
- 1. ### Install Windows updates
+ 1. ### Instalar actualizaciones de Windows
 
-    Verify that your Windows system is updated to install WSL.
+    Verifica que tu sistema Windows esté actualizado para instalar WSL.
 
-    Go to the **Settings** window > **Windows Update** if there are pending updates to install, run the installation and restart your system to continue.
+    Ve a la ventana de **Configuración** > **Actualización de Windows** y, si hay actualizaciones pendientes para instalar, ejecuta la instalación y reinicia tu sistema para continuar.
 
-    ![Windows Update](./assets/imgs/153225.png)
+    ![Actualización de Windows](./assets/imgs/153225.png)
 
- 2. ### Install WSL
+ 2. ### Instalar WSL
 
-    To install Linux on Windows we must open the ***PowerShell*** command line and type the following command (it is not necessary to open the terminal as an administrator user):
+    Para instalar Linux en Windows, debemos abrir la línea de comandos de ***PowerShell*** y escribir el siguiente comando (no es necesario abrir la terminal como administrador):
 
     ```powershell
     wsl --install
     ```
-    This command will enable the features necessary to run WSL and install the **Ubuntu** Linux distribution. [(go to the official Microsoft documentation for more information)](https://learn.microsoft.com/en-us/windows/wsl/install).
+    Este comando habilitará las características necesarias para ejecutar WSL e instalar la distribución de Linux **Ubuntu**. [(consulta la documentación oficial de Microsoft para obtener más información)](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-    At the end of the installation you must restart the system to take the changes, enter the following command:
+    Al finalizar la instalación, debes reiniciar el sistema para aplicar los cambios, ejecuta el siguiente comando:
 
     ```powershell
     Restart-Computer -Force
     ```    
-    When you start the computer you will notice that the Ubuntu terminal will start automatically so it will ask you to enter your username and password.
+    Cuando inicies el equipo, notarás que el terminal de Ubuntu se iniciará automáticamente y te pedirá que ingreses tu nombre de usuario y contraseña.
 
     ![Terminal Ubuntu](./assets/imgs/153226.png)
 
-    Enter the following command to remove the Ubuntu welcome message every time you start the terminal:
+    Ingresa el siguiente comando para eliminar el mensaje de bienvenida de Ubuntu cada vez que inicies el terminal:
 
     ```bash
     touch .hushlogin
     ```
 
- 3. ### Install Ubuntu updates
+ 3. ### Instalar actualizaciones de Ubuntu
 
     ```bash
     sudo apt -y update && sudo apt -y upgrade 
     ```
 
-4. ### Install dependencies and utilities:
+4. ### Instalar dependencias y utilidades:
 
     ```bash
     sudo apt -y install wget unzip tar unrar p7zip-full && sudo snap install curl
     ```
 
-5. ### Install development environment
+5. ### Instalar entorno de desarrollo
 
-    Run the following command to download the development environment setup script to the Ubuntu terminal:
+    Ejecuta el siguiente comando para descargar el script de configuración del entorno de desarrollo en el terminal de Ubuntu:
 
     ```bash
     curl -L https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/setupDev-wsl.sh -O && chmod +x setupDev-wsl.sh
     ```
-    Run the script to start the installation and configuration process:
+    Ejecuta el script para iniciar el proceso de instalación y configuración:
 
     ```bash
     ./setupDev-wsl.sh
     ```
-    This script performs various tasks such as installing Vim text editor, Node.js, npm, Python, Git and configuring Git with your username and email. It also generates an SSH key pair for use with GitHub.
-    Wait for the installation process to finish and enter the following command line to add the ***commitlint*** configuration:
+    Este script realiza diversas tareas, como la instalación del editor de texto Vim, Node.js, npm, Python, Git y la configuración de Git con tu nombre de usuario y correo electrónico. También genera un par de claves SSH para su uso con GitHub. Espera a que termine el proceso de instalación e ingresa el siguiente comando para agregar la configuración de ***commitlint***:
 
     ```bash
     echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
     ```
 
-    **Note**: Don't forget to add your ***SSH*** public key to your **GitHub** configuration for added security when cloning repositories and pushing changes from your local **Git** server to the remote server.
+    **Nota**: No olvides agregar tu clave pública ***SSH*** a la configuración de **GitHub** para una mayor seguridad al clonar repositorios y enviar cambios desde tu servidor local de **Git** al servidor remoto.
 
-    **[⬆ Back to top](#development-environment-in-windows)**
+    **[⬆ Volver al inicio](#entorno-de-desarrollo-en-windows)**
 
-## Install postgreSQL and connect with pgAdmin
+## Instalar PostgreSQL y conectar con pgAdmin
 
- 1. ### Install postgreSQL
+ 1. ### Instalar PostgreSQL
     
-    Open Ubuntu terminal and run the following commands to install ***postgresql***:
+    Abre el terminal de Ubuntu y ejecuta los siguientes comandos para instalar ***PostgreSQL***:
 
     ```bash
-    # Create the file repository configuration:
+    # Crea la configuración del repositorio de archivos:
     sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
-    # Import the repository signing key:
+    # Importa la clave de firma del repositorio:
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
     
-    # Update the package lists:
+    # Actualiza las listas de paquetes:
     sudo apt-get update
 
-    # Install the latest version of PostgreSQL.
-    # If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+    # Instala la última versión de PostgreSQL.
+    # Si deseas una versión específica, utiliza 'postgresql-12' u otra en lugar de 'postgresql':
     sudo apt-get -y install postgresql
     ```
-    At the end of the installation, enter the ***postgresql*** command line:
+    Al finalizar la instalación, entra en la línea de comandos de ***PostgreSQL***:
 
     ```bash
     sudo -u postgres psql
     ```
 
-    Now we will create a username and password for the database configuration:
+    Ahora vamos a crear un nombre de usuario y una contraseña para la configuración de la base de datos:
 
     ```sql
-    CREATE ROLE user PASSWORD 'password' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+    CREATE ROLE usuario PASSWORD 'contraseña' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
     ```
 
-    **Important**: change the word ***user*** with your ***username*** and the word ***password*** with the ***password*** of your preference inside the single quotes.
+    **Importante**: cambia la palabra ***usuario*** por tu ***nombre de usuario*** y la palabra ***contraseña*** por la ***contraseña*** de tu elección dentro de las comillas simples.
 
-    To exit the postgresql command line use the syntax `\q`
- 
- 2. ### Connect postgresql with pgAdmin
+    Para salir de la línea de comandos de PostgreSQL, usa la sintaxis `\q`.
+
+ 2. ### Conectar PostgreSQL con pgAdmin
     
-    To start the postgreSQL connection with the graphical environment, open the ***pgAdmin4*** application.
+    Para iniciar la conexión de PostgreSQL con el entorno gráfico, abre la aplicación ***pgAdmin4***.
 
     <div style="text-align:center">
         <img src="./assets/imgs/153227.png" width="500">
     </div>
 
-    When starting pgAdmin we must make the connection with postgreSQL by adding a new server:
+    Al iniciar pgAdmin, debes realizar la conexión con PostgreSQL agregando un nuevo servidor:
 
     <div style="text-align:center">
         <img src="./assets/imgs/153228.png">
     </div>
 
-    In the ***General*** tab of the ***Register Server*** window we must add a name, for example:
+    En la ventana de ***Registrar servidor***, en la pestaña ***General***, debes agregar un nombre, por ejemplo:
 
     <div style="text-align:center">
         <img src="./assets/imgs/153229.png" width="500">
     </div>
 
-    Then in the Connection window we add the hostname of our computer ***127.0.0.1*** followed by the ***username*** and ***password*** created in the **postgreSQL command line**:
+    Luego, en la ventana de Conexión, agrega el nombre de host de tu computadora ***127.0.0.1*** seguido del ***nombre de usuario*** y ***contraseña*** que creaste en la línea de comandos de **PostgreSQL**:
 
     <div style="text-align:center">
         <img src="./assets/imgs/153230.png" width="500">
     </div>
 
-    To finish the configuration, press the ***Save*** button.
+    Para finalizar la configuración, presiona el botón ***Guardar***.
 
-    **Important note**: we must keep the address ***127.0.0.1*** and the port ***5432*** that appears in the image.
+    **Nota importante**: debes mantener la dirección ***127.0.0.1*** y el puerto ***5432*** que aparecen en la imagen.
 
-    **[⬆ Back to top](#development-environment-in-windows)**
+    **[⬆ Volver al inicio](#entorno-de-desarrollo-en-windows)**
 
-## Customize Windows Terminal with Oh My Posh (optional)
+## Personalizar Windows Terminal con Oh My Posh (opcional)
 
- 1. ### Install Oh My Posh
+ 1. ### Instalar Oh My Posh
 
-    Open the **PowerShell** terminal and enter the following command:
+    Abre la terminal de **PowerShell** y ejecuta el siguiente comando:
 
     ```powershell
     winget install JanDeDobbeleer.OhMyPosh -s winget
     ```
- 2. ### Install fonts for terminal
 
-    The following command must be run as administrator for the fonts to be installed system-wide. **In case you do not have administrator rights, you can install the sources by adding the --user flag**.
+ 2. ### Instalar fuentes para el terminal
+
+    Debes ejecutar el siguiente comando como administrador para que las fuentes se instalen en todo el sistema. **Si no tienes derechos de administrador, puedes instalar las fuentes agregando la bandera --user**.
 
     ```powershell
     oh-my-posh font install
     ```
-    Once you have installed a Nerd Font, you will need to configure the Windows Terminal to use it. This can be easily done by modifying the Windows Terminal settings (default shortcut: **CTRL + SHIFT + ,**). In your settings.json file, add the font.face attribute under the defaults attribute in profiles:
+    Una vez que hayas instalado una fuente Nerd Font, debes configurar el Windows Terminal para usarla. Esto se puede hacer fácilmente modificando la configuración de Windows Terminal (atajo predeterminado: **CTRL + SHIFT + ,**). En tu archivo settings.json, agrega el atributo font.face dentro del atributo defaults en profiles:
 
     ```json
     {
@@ -242,67 +242,67 @@ This repository is designed to simplify the initial setup of a development envir
         }
     }
     ```
- 3. ### Start Oh My Posh with default theme
+ 3. ### Iniciar Oh My Posh con el tema predeterminado
 
-    For initialization of **Oh My Posh** enter the following command. 
-    
+    Para la inicialización de **Oh My Posh**, ingrese el siguiente comando:
+
     ```powershell
     oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"
 
-    # command line output
+    # Salida en la línea de comandos
     (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\jandedobbeleer.omp.json' --print) -join "`n") | Invoke-Expression
     ```
-    Copy the output of the command to the following configuration file: 
+    Copie la salida del comando al siguiente archivo de configuración:
 
     ```powershell
     notepad $PROFILE
     ```
-    If Notepad displays a pop-up window displaying the following message *"The system cannot find the path specified"*. Enter the following command to create the configuration file:
+    Si Notepad muestra una ventana emergente con el siguiente mensaje *"El sistema no puede encontrar la ruta especificada"*, ingrese el siguiente comando para crear el archivo de configuración:
 
     ```powershell
     New-Item -Path $PROFILE -Type File -Force
     ```
 
-    Repeat the `notepad $PROFILE` command to open the configuration file.
+    Repita el comando `notepad $PROFILE` para abrir el archivo de configuración.
 
-    Add the output of the command `oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"` to the configuration file `$PROFILE` save the changes and restart the terminal to start Oh My Posh.
+    Agregue la salida del comando `oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"` al archivo de configuración `$PROFILE`, guarde los cambios y reinicie la terminal para iniciar Oh My Posh.
 
- 4. ### Set Theme in Oh My Posh     
+4. ### Establecer un tema en Oh My Posh
 
-    In this case the default theme "jandedobbeleer.omp.json" is being used. You can choose the one you prefer, consult the [Oh My Posh documentation](https://ohmyposh.dev/docs/themes) to see the list of themes.
+    En este caso, se está utilizando el tema predeterminado "jandedobbeleer.omp.json". Puede elegir el que prefiera, consulte la [documentación de Oh My Posh](https://ohmyposh.dev/docs/themes) para ver la lista de temas disponibles.
 
-    You can also see the list of topics from ***PowerShell*** with the command:
+    También puede ver la lista de temas desde ***PowerShell*** con el siguiente comando:
 
     ```powershell
     Get-PoshThemes
     ```
-    To change the theme just change the name of the theme from the `$PROFILE` configuration file.
+    Para cambiar el tema, simplemente cambie el nombre del tema en el archivo de configuración `$PROFILE`.
 
     ```powershell
-    # Open the configuration file
+    # Abra el archivo de configuración
     notepad $PROFILE
 
-    # Change only the name of the theme in the following line:
-    (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\"new theme name".omp.json' --print) -join "`n") | Invoke-Expression
+    # Cambie solo el nombre del tema en la siguiente línea:
+    (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\"nuevo nombre del tema".omp.json' --print) -join "`n") | Invoke-Expression
 
-    # Example:
+    # Ejemplo:
     (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\pure.omp.json' --print) -join "`n") | Invoke-Expression
     ```
- 5. ### Install Terminal Icons and enable PSReadLine module
+5. ### Instalar Iconos de Terminal y habilitar el módulo PSReadLine
 
-    Install the icon module for the terminal with the following command:
+    Instale el módulo de iconos para el terminal con el siguiente comando:
 
     ```powershell
     Install-Module -Name Terminal-Icons -Repository PSGallery
 
-    # then add option [A] to accept.
+    # luego agregue la opción [A] para aceptar.
     ```
-    We add the following lines to the end of the terminal `$PROFILE` file to import the Terminal-Icons module and enable the PSReadLine.
+    Agregamos las siguientes líneas al final del archivo `$PROFILE` del terminal para importar el módulo Terminal-Icons y habilitar PSReadLine.
 
     ```powershell
     Import-Module Terminal-Icons
     Set-PSReadLineOption -PredictionViewStyle ListView
     ```
-    To finish, save the changes `Ctrl+S` and restart the terminal.
-    
-    **[⬆ Back to top](#development-environment-in-windows)**
+    Para finalizar, guarde los cambios con `Ctrl+S` y reinicie la terminal.
+
+    **[⬆ Volver al inicio](#entorno-de-desarrollo-en-windows)**
