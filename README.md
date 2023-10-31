@@ -40,14 +40,14 @@ This repository is designed to simplify the initial setup of a development envir
 
     Install the **Windows Terminal** and **PowerShell** from the **Microsoft Store**. If you have the 2 applications installed, you just have to make sure they are updated.
 
-    ![Windows Terminal](./assets/imgs/153222.png)
-    ![PowerShell](./assets/imgs/153223.png)
+    ![Windows Terminal](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153222)
+    ![PowerShell](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153223)
 
 2. ### Install winget
 
     Install or update the ***winget*** package from the **Microsoft Store**, this tool is essential to run the script that will install the development tools.
 
-    ![winget](./assets/imgs/153224.png)
+    ![winget](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153224)
 
 3. ### Run script to install development tools
 
@@ -81,7 +81,7 @@ This repository is designed to simplify the initial setup of a development envir
 
     Go to the **Settings** window > **Windows Update** if there are pending updates to install, run the installation and restart your system to continue.
 
-    ![Windows Update](./assets/imgs/153225.png)
+    ![Windows Update](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153225)
 
  2. ### Install WSL
 
@@ -99,7 +99,7 @@ This repository is designed to simplify the initial setup of a development envir
     ```    
     When you start the computer you will notice that the Ubuntu terminal will start automatically so it will ask you to enter your username and password.
 
-    ![Terminal Ubuntu](./assets/imgs/153226.png)
+    ![Terminal Ubuntu](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153226)
 
     Enter the following command to remove the Ubuntu welcome message every time you start the terminal:
 
@@ -183,25 +183,25 @@ This repository is designed to simplify the initial setup of a development envir
     To start the postgreSQL connection with the graphical environment, open the ***pgAdmin4*** application.
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153227.png" width="500">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153227" width="500">
     </div>
 
     When starting pgAdmin we must make the connection with postgreSQL by adding a new server:
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153228.png">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153228">
     </div>
 
     In the ***General*** tab of the ***Register Server*** window we must add a name, for example:
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153229.png" width="500">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153229" width="500">
     </div>
 
     Then in the Connection window we add the hostname of our computer ***127.0.0.1*** followed by the ***username*** and ***password*** created in the **postgreSQL command line**:
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153230.png" width="500">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153230" width="500">
     </div>
 
     To finish the configuration, press the ***Save*** button.
