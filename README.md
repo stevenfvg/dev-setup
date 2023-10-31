@@ -55,13 +55,13 @@ This repository is designed to simplify the initial setup of a development envir
 
     ```powershell
     #Command to download the script:
-    Invoke-RestMethod -Uri https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/installDevTools.ps1 -OutFile "C:\Users\$env:USERNAME\Downloads\installDevTools.ps1"
+    Invoke-RestMethod -Uri https://tinyurl.com/devtools-ps1 -OutFile "C:\Users\$env:USERNAME\Downloads\dev-tools.ps1"
 
     # Access the Downloads directory:
     cd C:\Users\$env:USERNAME\Downloads\
 
     # We run the script:
-    ./installDevTools.ps1
+    ./dev-tools.ps1
     ```
     Once the script execution process is complete, you will have the following programs installed on your computer:
     
@@ -124,12 +124,12 @@ This repository is designed to simplify the initial setup of a development envir
     Run the following command to download the development environment setup script to the Ubuntu terminal:
 
     ```bash
-    curl -L https://raw.githubusercontent.com/stevenfvg/prework-setup-windows/main/scripts/setupDev-wsl.sh -O && chmod +x setupDev-wsl.sh
+    curl -L https://tinyurl.com/devtools-wsl -O && chmod +x setup-wsl.sh
     ```
     Run the script to start the installation and configuration process:
 
     ```bash
-    ./setupDev-wsl.sh
+    ./setup-wsl.sh
     ```
     This script performs various tasks such as installing Vim text editor, Node.js, npm, Python, Git and configuring Git with your username and email. It also generates an SSH key pair for use with GitHub.
     Wait for the installation process to finish and enter the following command line to add the ***commitlint*** configuration:
@@ -283,10 +283,10 @@ This repository is designed to simplify the initial setup of a development envir
     notepad $PROFILE
 
     # Change only the name of the theme in the following line:
-    (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\"new theme name".omp.json' --print) -join "`n") | Invoke-Expression
+    (@(& 'C:/Users/$env:USERNAME/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\$env:USERNAME\AppData\Local\Programs\oh-my-posh\themes\"new theme name".omp.json' --print) -join "`n") | Invoke-Expression
 
     # Example:
-    (@(& 'C:/Users/st3ve/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\st3ve\AppData\Local\Programs\oh-my-posh\themes\pure.omp.json' --print) -join "`n") | Invoke-Expression
+    (@(& 'C:/Users/$env:USERNAME/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\$env:USERNAME\AppData\Local\Programs\oh-my-posh\themes\pure.omp.json' --print) -join "`n") | Invoke-Expression
     ```
  5. ### Install Terminal Icons and enable PSReadLine module
 
