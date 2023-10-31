@@ -40,14 +40,14 @@ Este repositorio está diseñado para simplificar la configuración inicial de u
 
     Instala el **Windows Terminal** y **PowerShell** desde la **Tienda Microsoft**. Si ya tienes estas dos aplicaciones instaladas, asegúrate de que estén actualizadas.
 
-    ![Windows Terminal](./assets/imgs/153222.png)
-    ![PowerShell](./assets/imgs/153223.png)
+    ![Windows Terminal](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153222)
+    ![PowerShell](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153223)
 
 2. ### Instalar winget
 
     Instala o actualiza el paquete ***winget*** desde la **Tienda Microsoft**, esta herramienta es esencial para ejecutar el script que instalará las herramientas de desarrollo.
 
-    ![winget](./assets/imgs/153224.png)
+    ![winget](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153224)
 
 3. ### Ejecutar script para instalar herramientas de desarrollo
 
@@ -81,7 +81,7 @@ Este repositorio está diseñado para simplificar la configuración inicial de u
 
     Ve a la ventana de **Configuración** > **Actualización de Windows** y, si hay actualizaciones pendientes para instalar, ejecuta la instalación y reinicia tu sistema para continuar.
 
-    ![Actualización de Windows](./assets/imgs/153225.png)
+    ![Actualización de Windows](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153225)
 
  2. ### Instalar WSL
 
@@ -99,7 +99,7 @@ Este repositorio está diseñado para simplificar la configuración inicial de u
     ```    
     Cuando inicies el equipo, notarás que el terminal de Ubuntu se iniciará automáticamente y te pedirá que ingreses tu nombre de usuario y contraseña.
 
-    ![Terminal Ubuntu](./assets/imgs/153226.png)
+    ![Terminal Ubuntu](https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153226)
 
     Ingresa el siguiente comando para eliminar el mensaje de bienvenida de Ubuntu cada vez que inicies el terminal:
 
@@ -182,25 +182,25 @@ Este repositorio está diseñado para simplificar la configuración inicial de u
     Para iniciar la conexión de PostgreSQL con el entorno gráfico, abre la aplicación ***pgAdmin4***.
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153227.png" width="500">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153227" width="500">
     </div>
 
     Al iniciar pgAdmin, debes realizar la conexión con PostgreSQL agregando un nuevo servidor:
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153228.png">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153228">
     </div>
 
     En la ventana de ***Registrar servidor***, en la pestaña ***General***, debes agregar un nombre, por ejemplo:
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153229.png" width="500">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153229" width="500">
     </div>
 
     Luego, en la ventana de Conexión, agrega el nombre de host de tu computadora ***127.0.0.1*** seguido del ***nombre de usuario*** y ***contraseña*** que creaste en la línea de comandos de **PostgreSQL**:
 
     <div style="text-align:center">
-        <img src="./assets/imgs/153230.png" width="500">
+        <img src="https://res.cloudinary.com/dozvvpar9/image/upload/f_auto,q_auto/v1/doc-dev-setup/153230" width="500">
     </div>
 
     Para finalizar la configuración, presiona el botón ***Guardar***.
