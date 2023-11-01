@@ -124,12 +124,12 @@ This repository is designed to simplify the initial setup of a development envir
     Run the following command to download the development environment setup script to the Ubuntu terminal:
 
     ```bash
-    curl -L https://tinyurl.com/devtools-wsl -O && chmod +x setup-wsl.sh
+    curl -L https://tinyurl.com/devsetup-wsl -O && chmod +x devsetup-wsl
     ```
     Run the script to start the installation and configuration process:
 
     ```bash
-    ./setup-wsl.sh
+    ./devsetup-wsl
     ```
     This script performs various tasks such as installing Vim text editor, Node.js, npm, Python, Git and configuring Git with your username and email. It also generates an SSH key pair for use with GitHub.
     Wait for the installation process to finish and enter the following command line to add the ***commitlint*** configuration:
